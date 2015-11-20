@@ -1,9 +1,9 @@
 function numInscriptos () {
-	return Inscriptos.find({acreditado : {$ne: false}}).count();
+	return Inscriptos.find({acreditado : {$ne: true}}).count();
 }
 
 function numAcreditados () {
-	return Inscriptos.find({acreditado : {$ne: true}}).count();
+	return Inscriptos.find({acreditado : {$ne: false}}).count();
 }
 
 Template.registerHelper('hayMasDeUnAcreditado', function() {
