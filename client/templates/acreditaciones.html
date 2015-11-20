@@ -1,0 +1,110 @@
+<template name="inputAcreditar">
+  <div class="ui search">
+    <div class="ui transparent left icon input">
+      <input class="prompt" type="text" placeholder="Buscar inscriptos...">
+      <i class="search icon"></i>
+    </div>
+    <div class="results"></div>
+  </div>
+</template>
+
+<template name="botonAcreditar">
+  <button class="ui basic button">
+    Acreditar
+  </button>
+</template>
+
+<template name="botonDeshacer">
+  <button class="ui basic icon button">
+    <i class="undo icon"></i>
+  </button>
+</template>
+
+<template name="tablaWrapper">
+  <h3 class="ui dividing header">{{this.titulo}}</h3>
+  <table class="ui very basic table" id="this.id">
+    <thead>
+      <tr>
+        {{#if acreditados}}
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Teléfono</th>
+          <th>Cuándo</th>
+          <th>Quién</th>
+        {{/if}}
+        {{#if inscriptos}}
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Teléfono</th>
+        {{/if}}
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{> UI.contentBlock}}
+    </tbody>
+  </table>
+</template>
+
+<template name="tablaAsistentes">
+  {{#tablaWrapper titulo="Acreditados" id="acreditados"}}
+    {{#each asistente}}
+      <tr data-id="{{this._id}}">
+        <td>{{ this.name }}</td>
+        <td>{{ this.email }}</td>
+        <td>{{ this.telefono }}</td>
+        <td>{{ this.cuando }}</td>
+        <td>{{ this.quien }}</td>
+        <td>{{> botonDeshacer }}</td>
+      </tr>
+    {{/each}}
+  {{/tablaWrapper}}
+</template>
+
+<template name="tablaInscriptos">
+  {{#tablaWrapper titulo="Inscriptos" id="inscriptos"}}
+    {{#each inscripto}}
+      <tr data-id="{{this._id}}">
+        <td>{{ this.name }}</td>
+        <td>{{ this.email }}</td>
+        <td>{{ this.telefono }}</td>
+        <td>{{> botonAcreditar }}</td>
+      </tr>
+    {{/each}}
+  {{/tablaWrapper}}
+</template>
+
+<template name="stats">
+  <div class="ui tiny horizontal statistic">
+    <div class="value">
+      {{numAcreditados}}
+    </div>
+    <div class="label">
+      {{# if hayMasDeUnAcreditado}}
+        Acreditados
+      {{else }}
+        Acreditado
+      {{ /if }}
+    </div>
+  </div>
+  <div class="ui tiny horizontal statistic">
+    <div class="value">
+      {{numInscriptos}}
+    </div>
+    <div class="label">
+      {{# if hayMasDeUnInscripto}}
+        Inscriptos
+      {{else }}
+        Inscripto
+      {{ /if }}
+    </div>
+  </div>
+  <div class="ui tiny horizontal statistic">
+    <div class="value">
+      {{numParticipantes}}
+    </div>
+    <div class="label">
+      Participantes en total
+    </div>
+  </div>
+</template>

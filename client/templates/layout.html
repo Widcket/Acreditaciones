@@ -1,0 +1,19 @@
+<template name="layout">
+	<div class="wrapper">
+		<div class="ui four column grid">
+			<div class="three wide column"></div>
+		    <div class="two wide column">{{> menu}}</div>
+		    <div class="eight wide column">
+		    	{{# if acreditados}}
+		    		{{> inputAcreditar}}
+					{{> tablaAsistentes}}
+				{{ /if}}
+				{{# if inscriptos}}
+					{{> tablaInscriptos}}
+				{{ /if}}
+				{{> stats}}
+		    </div>
+		    <div class="three wide column"></div>
+		</div>
+	</div>
+</template>
