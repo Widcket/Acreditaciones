@@ -20,9 +20,25 @@
 			    </div>
 			</div>
 
+			<div class="row tablet only">
+			    <div class="fifteen wide column menu">{{> mobileMenu}}</div>
+			</div>
+			<div class="row tablet only">
+			    <div class="fifteen wide column tabla">
+			    	{{# if acreditados}}
+			    		{{> inputAcreditar}}
+						{{> tablaAsistentes}}
+					{{ /if}}
+					{{# if inscriptos}}
+						{{> tablaInscriptos}}
+					{{ /if}}
+					{{> stats}}
+			    </div>
+			</div>
+
 			<div class="row computer only">
-			    <div class="three wide right floated column menu">{{> computerMenu}}</div>
-			    <div class="twelve wide right floated column tabla">
+			    <div class="right floated three wide column menu">{{> computerMenu}}</div>
+			    <div class="right floated twelve wide column tabla">
 			    	{{# if acreditados}}
 			    		{{> inputAcreditar}}
 						{{> tablaAsistentes}}

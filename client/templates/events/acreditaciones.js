@@ -20,7 +20,7 @@ Template.inputAcreditar.events({
 	}
 });
 
-Template.menu.events({
+Template.menuItems.events({
 	'click .inscriptos' : function() {
 		Session.set("inscriptos", true);
 		Session.set("acreditados", false);
