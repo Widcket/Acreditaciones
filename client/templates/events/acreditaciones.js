@@ -8,7 +8,6 @@ Template.botonAcreditar.events({
 Template.botonDeshacer.events({
 	'click': function (event) {
 		var id = $(event.target).closest("tr").attr("data-id");
-		console.log(id);
 		Inscriptos.desacreditar(id);
 	}
 });
