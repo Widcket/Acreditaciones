@@ -1,10 +1,10 @@
-function numInscriptos () {
+var numInscriptos =  function () {
 	return Inscriptos.find({acreditado : {$ne: true}}).count();
-}
+};
 
-function numAcreditados () {
+var numAcreditados = function () {
 	return Inscriptos.find({acreditado : {$ne: false}}).count();
-}
+};
 
 Template.registerHelper('hayMasDeUnAcreditado', function() {
      if (numAcreditados() === 1) return false;
@@ -61,7 +61,7 @@ Template.inputAcreditar.onRendered(function () {
             for (var j = 0; j < keys.length; j++) {
               items[j] = unsorted[keys[j]];
             }
-            result = {};
+            var result = {};
             result["results"] = items;
             return result;
           }
@@ -89,7 +89,6 @@ Template.inputAcreditar.onRendered(function () {
         	Inscriptos.acreditar(result._id);
       	},
         onResultsClose : function() {
-        	result = undefined;
         	$('.ui.search input.prompt').val(function() {
             	return this.defaultValue;
         	});
