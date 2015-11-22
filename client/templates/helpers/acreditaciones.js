@@ -61,7 +61,7 @@ Template.inputAcreditar.onRendered(function () {
             for (var j = 0; j < keys.length; j++) {
               items[j] = unsorted[keys[j]];
             }
-            result = {};
+            var result = {};
             result["results"] = items;
             return result;
           }
