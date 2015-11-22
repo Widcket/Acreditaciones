@@ -1,6 +1,16 @@
-<template name="menu">
+<template name="computerMenu">
 	<div class="ui secondary vertical pointing menu">
-	  <a class="header item acreditados">Acreditados</a>
-	  <a class="item inscriptos">Inscriptos</a>
+	  {{> menuItems}}
 	</div>
+</template>
+
+<template name="mobileMenu">
+	<div class="ui secondary pointing menu">
+	  {{> menuItems}}
+	</div>
+</template>
+
+<template name="menuItems">
+	<a class="header item acreditados">Acreditados</a>
+	<a class="item inscriptos">Inscriptos</a>
 </template>

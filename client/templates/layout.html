@@ -1,19 +1,41 @@
 <template name="layout">
 	<div class="wrapper">
-		<div class="ui four column grid">
-			<div class="three wide column"></div>
-		    <div class="two wide column">{{> menu}}</div>
-		    <div class="eight wide column">
-		    	{{# if acreditados}}
-		    		{{> inputAcreditar}}
-					{{> tablaAsistentes}}
-				{{ /if}}
-				{{# if inscriptos}}
-					{{> tablaInscriptos}}
-				{{ /if}}
-				{{> stats}}
-		    </div>
-		    <div class="three wide column"></div>
+
+		<div class="ui container">
+			<div class="ui centered relaxed grid">
+
+			<div class="row mobile only">
+			    <div class="fifteen wide column menu">{{> mobileMenu}}</div>
+			</div>
+			<div class="row mobile only">
+			    <div class="fifteen wide column tabla">
+			    	{{# if acreditados}}
+			    		{{> inputAcreditar}}
+						{{> tablaAsistentes}}
+					{{ /if}}
+					{{# if inscriptos}}
+						{{> tablaInscriptos}}
+					{{ /if}}
+					{{> stats}}
+			    </div>
+			</div>
+
+			<div class="row computer only">
+			    <div class="three wide right floated column menu">{{> computerMenu}}</div>
+			    <div class="twelve wide right floated column tabla">
+			    	{{# if acreditados}}
+			    		{{> inputAcreditar}}
+						{{> tablaAsistentes}}
+					{{ /if}}
+					{{# if inscriptos}}
+						{{> tablaInscriptos}}
+					{{ /if}}
+					{{> stats}}
+			    </div>
+			    </div>
+
+			</div>
 		</div>
+
 	</div>
 </template>
