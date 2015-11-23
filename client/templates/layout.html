@@ -1,14 +1,12 @@
 <template name="layout">
-	<div class="wrapper">
+	<div class="ui left aligned container">
 
-		<div class="ui container">
-			<div class="ui centered relaxed grid">
-
-			<div class="row mobile only">
-			    <div class="fifteen wide column menu">{{> mobileMenu}}</div>
+		<div class="mobile only one column ui stackable grid">
+			<div class="row">
+			    <div class="column menu">{{> mobileMenu}}</div>
 			</div>
-			<div class="row mobile only">
-			    <div class="fifteen wide column tabla">
+			<div class="row">
+			    <div class="column tabla">
 			    	{{# if acreditados}}
 			    		{{> inputAcreditar}}
 						{{> tablaAsistentes}}
@@ -19,12 +17,14 @@
 					{{> stats}}
 			    </div>
 			</div>
+		</div>
 
-			<div class="row tablet only">
-			    <div class="fifteen wide column menu">{{> mobileMenu}}</div>
+		<div class="tablet only one column ui stackable grid">
+			<div class="row">
+			    <div class="column menu">{{> mobileMenu}}</div>
 			</div>
-			<div class="row tablet only">
-			    <div class="fifteen wide column tabla">
+			<div class="row">
+			    <div class="column tabla">
 			    	{{# if acreditados}}
 			    		{{> inputAcreditar}}
 						{{> tablaAsistentes}}
@@ -35,9 +35,11 @@
 					{{> stats}}
 			    </div>
 			</div>
+		</div>
 
-			<div class="row computer only">
-			    <div class="right floated three wide column menu">{{> computerMenu}}</div>
+		<div class="computer only ui fourteen column stackable grid">
+			<div class="row">
+			    <div class="left floated two wide column menu">{{> computerMenu}}</div>
 			    <div class="right floated twelve wide column tabla">
 			    	{{# if acreditados}}
 			    		{{> inputAcreditar}}
@@ -49,9 +51,6 @@
 					{{> stats}}
 			    </div>
 			    </div>
-
-			</div>
 		</div>
-
 	</div>
 </template>
